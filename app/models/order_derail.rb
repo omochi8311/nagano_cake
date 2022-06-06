@@ -1,0 +1,2 @@
+class OrderDerail < ApplicationRecord
+end
