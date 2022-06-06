@@ -2,6 +2,24 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "public/homes#top"
 
+  scope module: :public do
+    resources :hoems
+    resources :items
+    resources :customers
+    resources :cart_items
+    resources :orders
+    resources :addresses
+  end
+
+
+  namespace :admin do
+    resources :genres
+    resources :homes
+    resources :items
+    resources :customers
+    resources :orders
+    resources :order_details
+  end
 
   # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords], controllers: {
