@@ -6,19 +6,19 @@ class Admin::GenresController < ApplicationController
   end
 
   def create
-    genre = Genre.new(genre_params)
-    genre.save
-    redirect_to edit_admin_genre_path
+    @genre = Genre.new(genre_params)
+    @genre.save
+    redirect_to edit_admin_genre_path(@genre)
   end
 
   def edit
-    @genre =Genre.find(params[:id])
+    @genre = Genre.find(params[:id])
   end
 
   def update
     @genre =Genre.find(params[:id])
     @genre.update(genre_params)
-    redirect_to edit_admin_genre_path
+    redirect_to admin_genres_path
   end
 
   private

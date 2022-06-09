@@ -21,7 +21,7 @@
               <td>
                 <% @genres.each do |genre| %>
                   <%= genre.name %>
-                  <%= link_to "edit",edit_admin_genre_path(@genres),class: "btn btn-success" %>
+                  <%= link_to "edit",edit_admin_genre_path(genre),class: "btn btn-success" %>
                 <% end %>
               </td>
             </tr>
