@@ -10,7 +10,7 @@
               <h5>商品説明</h5>
                 <%= f.text_area :introduction %>
               <h5>ジャンル</h5>
-
+                <%= f.collection_select :genre_id,@genres, :id, :name,include_blank: "選択して下さい" %>
               <h5>税抜価格</h5>
                 <%= f.text_field :price %>
               <h5>販売ステータス</h5>
