@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_06_06_132751) do
     t.text "introduction", null: false
     t.integer "price", null: false
     t.string "image_id", null: false
+    t.integer "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_deleted", default: false

@@ -2,6 +2,7 @@ class Admin::ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @genres =Genre.all
   end
 
   def create
@@ -16,6 +17,7 @@ class Admin::ItemsController < ApplicationController
 
   def index
     @items =Item.all
+    @genres =Genre.all
   end
 
   def edit
@@ -31,6 +33,6 @@ class Admin::ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :price, :image_id)
+    params.require(:item).permit(:name, :introduction, :price, :image_id, :genre_id)
   end
 end
