@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2022_06_06_132751) do
     t.integer "genre_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "is_deleted", default: false
+    t.boolean "is_active", default: false
   end
 
   create_table "order_derails", force: :cascade do |t|

@@ -12,6 +12,11 @@
           <h5>税込価格(税抜価格)</h5>
             <%= @item.price %>
           <h5>販売ステータス</h5>
+            <% if @item.is_active %>
+            <h5>販売中</h5>
+            <% else %>
+            <h5>販売停止中</h5>
+            <% end %>
           <%= link_to "編集する",edit_admin_item_path(@item),class: "btn btn-success" %>
     </div>
   </div>

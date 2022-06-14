@@ -13,6 +13,11 @@
             <%= f.collection_select :genre_id,@genres, :id, :name %>
           <h5>商品価格</h5>
             <%= f.text_field:price %><br>
+          <h5>販売ステータス</h5>
+            <%= f.radio_button:is_active, :ture %>
+            <%= f.label :販売中 %>
+            <%= f.radio_button:is_deleted, :false %>
+            <%= f.label :販売停止中 %>
             <%= f.submit "新規登録",class: "btn btn-success" %>
            <% end %>
     </div>
