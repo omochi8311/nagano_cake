@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h4>注文履歴詳細</h4>
+          <h5>購入者</h5>
+            <%= @customer.last_name,first_name %>
+          <h5>注文日</h5>
+          <h5>配送先</h5>
+            <%= @customer.postal_code %><%= @customer.address %>
+          <h5>支払方法</h5>
+            <%= @order.payment_method %>
+          <h5>注文ステータス</h5>
+    </div>
+  </div>
+</div

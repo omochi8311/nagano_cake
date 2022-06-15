@@ -11,8 +11,10 @@
   <body>
     <header>
       <% if customer_signed_in? %>
-        <li><%= link_to"マイページ",customers_path %></li>
-        <li><%= link_to"ログアウト",destroy_customer_session_path,method::delete %>
+        <li><%= link_to "マイページ(後でURL変更)",about_path, class: "btn btn-outline-secondary" %></li>
+        <li><%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary" %></li>
+      <% else %>
+        <li><%= link_to "About",about_path, class: "btn btn-outline-secondary" %></li>
       <% end %>
     </header>
   <%= yield %>
