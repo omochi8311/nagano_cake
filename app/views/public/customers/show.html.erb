@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h4>マイページ</h4>
+        <h6>氏名</h6>
+          <%= @customer.last_name,first_name %><br>
+        <h6>カナ</h6>
+          <%= @customer.last_name_kana,first_name_kana %><br>
+        <h6>郵便番号</h6>
+          <%= @customer.postal_code %><br>
+        <h6>住所</h6>
+          <%= @customer.address %><br>
+        <h6>電話番号</h6>
+          <%= @customer.telephone_number %><br>
+        <h6>メールアドレス</h6>
+          <%= @customer.email %><br>
+      <h4>配送先</h4>
+      <h4>注文履歴</h4>
+    </div>
+  </div>
+</div>
