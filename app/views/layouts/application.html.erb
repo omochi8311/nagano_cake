@@ -10,11 +10,16 @@
   </head>
   <body>
     <header>
+     <h2>LOGO</h2>
       <% if customer_signed_in? %>
-        <li><%= link_to "マイページ(後でURL変更)",about_path, class: "btn btn-outline-secondary" %></li>
-        <li><%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary" %></li>
+        <%= link_to "マイページ",customer_path(current_customer), class: "btn btn-outline-secondary" %>
+        <%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "ログアウト",destroy_customer_session_path,method: :delete,class: "btn btn-outline-secondary" %>
       <% else %>
-        <li><%= link_to "About",about_path, class: "btn btn-outline-secondary" %></li>
+        <%= link_to "About",about_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "新規登録",new_customer_registration_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "ログイン",new_customer_session_path, class: "btn btn-outline-secondary" %>
       <% end %>
     </header>
   <%= yield %>
