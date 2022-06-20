@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-1">
-        <h4><%= @customer.last_name,first_name %>会員詳細</h4>
+        <h4><%= @customer.last_name %><%= @customer.first_name %>会員詳細</h4>
           <h5>会員ID</h5>
             <%= @customer.id %><br>
           <h5>氏名</h5>
@@ -17,9 +17,14 @@
           <h5>メールアドレス</h5>
             <%= @customer.email %><br>
           <h5>会員ステータス</h5>
+            <% if @customer.is_deleted %>
+              <h6 class="text-secondary">退会</h6>
+            <% else %>
+              <h6 class="text-success">有効</h6>
+            <% end %>
 
-              <%= link_to "編集する",edit_admin_customer_path(@customer),class: "btn btn-success" %>
-
+          <%= link_to "編集する",edit_admin_customer_path(@customer),class: "btn btn-success" %>
+          <%= link_to "注文履歴一覧を見る",admin_order_path(@customer),class: "btn btn-primary" %>
     </div>
   </div>
 </div

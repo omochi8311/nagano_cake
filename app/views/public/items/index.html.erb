@@ -1,1 +1,12 @@
-商品一覧ページ
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h4>商品一覧</h4>
+        <% @items.each do |item| %>
+          <%= image_tag item.image, size: "200x200" %>
+          <%= item.name %>
+          <%= item.price %>
+        <% end %>
+    </div>
+  </div>
+</div

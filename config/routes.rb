@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "public/homes#top"
   get 'customers/my_page' => 'public/customers#show'
   get '/customers/withdrawal' => 'public/customers#withdrawal'
+  patch '/customers/end' => 'public/customers#end'
 
   # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords], controllers: {
