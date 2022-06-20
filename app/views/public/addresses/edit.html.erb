@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+      <h4>配送先編集</h4>
+        <%= form_with model:@address,url: address_path(@address) do |f| %>
+          <%= f.label :postal_code, "郵便番号（ハイフンなし）" %>
+            <%= f.text_field :postal_code %><br>
+          <%= f.label :address, "住所" %>
+            <%= f.text_field :address %><br>
+          <%= f.label :name, "宛名" %>
+            <%= f.text_field :name %>
+          <%= f.submit "変更内容を保存する",class: "btn btn-success" %>
+        <% end %>
+    </div>
+  </div>
+</div

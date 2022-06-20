@@ -11,7 +11,7 @@ class Public::CustomersController < ApplicationController
  def update
    @customer = Customer.find(params[:id])
    @customer.update(customer_params)
-   redirect_to pubilc_customer_path
+   redirect_to customers_my_page_path
  end
 
   private
