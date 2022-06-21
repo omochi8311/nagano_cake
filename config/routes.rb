@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "public/homes#top"
-  get 'customers/my_page' => 'public/customers#show'
-  get '/customers/withdrawal' => 'public/customers#withdrawal'
-  patch '/customers/end' => 'public/customers#end'
+  get '/admin' => 'admin/homes#top'
 
   # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords], controllers: {
@@ -23,10 +21,14 @@ Rails.application.routes.draw do
   scope module: :public do
     resources :hoems
     resources :items
-    resources :customers
     resources :cart_items
     resources :orders
     resources :addresses
+    get '/customers/my_page' => 'customers#show'
+    get '/customers/withdrawal' => 'customers#withdrawal'
+    get '/customers/my_page/edit' => 'customers#edit'
+    patch '/customers/update' => 'customers#update'
+    patch '/customers/quit' => 'customers#quit'
   end
 
 

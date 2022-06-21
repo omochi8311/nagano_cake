@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-8 offset-md-1">
       <h4>マイページ</h4>
-        <%= link_to "編集する",edit_customer_path(@customer), class: "btn btn-success" %>
+        <%= link_to "編集する",customers_my_page_edit_path, class: "btn btn-success" %>
        <h4>登録情報</h4>
         <h6>氏名</h6>
           <%= @customer.last_name %><%= @customer.first_name %><br>
@@ -19,7 +19,7 @@
       <h4>配送先</h4>
         <%= link_to "一覧を見る",addresses_path(@customer), class: "btn btn-primary" %>
       <h4>注文履歴</h4>
-        
+
     </div>
   </div>
 </div>

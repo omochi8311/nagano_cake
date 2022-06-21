@@ -12,7 +12,7 @@
     <header>
      <h2>LOGO</h2>
       <% if customer_signed_in? %>
-        <%= link_to "マイページ",customer_path(current_customer), class: "btn btn-outline-secondary" %>
+        <%= link_to "マイページ",customers_my_page_path	, class: "btn btn-outline-secondary" %>
         <%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary" %>
         <%= link_to "ログアウト",destroy_customer_session_path,method: :delete,class: "btn btn-outline-secondary" %>
       <% else %>
