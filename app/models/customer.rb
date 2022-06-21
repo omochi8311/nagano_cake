@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-  has_many :crat_items
+  has_many :cart_items
   has_many :addresses
   has_many :orders
   # Include default devise modules. Others available are:

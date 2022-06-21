@@ -1,6 +1,6 @@
-class CreateCratItems < ActiveRecord::Migration[6.1]
+class CreateCartItems < ActiveRecord::Migration[6.1]
   def change
-    create_table :crat_items do |t|
+    create_table :cart_items do |t|
       t.integer :amount,null: false
       t.integer :item_id,null: false
       t.integer :customer_id,null: false
