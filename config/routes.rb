@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "public/homes#top"
   get '/admin' => 'admin/homes#top'
   delete '/cart_items/destroy_all' => 'public/cart_items#destroy_all'
-  
+  post '/orders/confirmation' => 'public/orders#confirmation'
+  get '/orders/completion' => 'public/orders#completion'
+
 
   # URL /customers/sign_in ...
   devise_for :customers,skip: [:passwords], controllers: {
