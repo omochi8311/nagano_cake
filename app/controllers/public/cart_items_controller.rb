@@ -5,6 +5,11 @@ class Public::CartItemsController < ApplicationController
 
   def index
     @cart_items = current_customer.cart_items
+    @total = 0
+  end
+  def destroy_all
+  CartItem.destroy_all
+  redirect_to cart_items_path
   end
 
   def create
