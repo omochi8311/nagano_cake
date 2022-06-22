@@ -14,14 +14,14 @@
         <h2>LOGO</h2>
           <ul class="navbar-nav ml-auto">
             <% if customer_signed_in? %>
-              <%= link_to "マイページ",customers_my_page_path	, class: "btn btn-outline-secondary" %>
-              <%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary" %>
-              <%= link_to "カート",cart_items_path, class: "btn btn-outline-secondary" %>
+              <%= link_to "マイページ",customers_my_page_path	, class: "btn btn-outline-secondary mr-4" %>
+              <%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary mr-4" %>
+              <%= link_to "カート",cart_items_path, class: "btn btn-outline-secondary mr-4" %>
               <%= link_to "ログアウト",destroy_customer_session_path,method: :delete,class: "btn btn-outline-secondary" %>
             <% else %>
-              <%= link_to "About",about_path, class: "btn btn-outline-secondary" %>
-              <%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary" %>
-              <%= link_to "新規登録",new_customer_registration_path, class: "btn btn-outline-secondary" %>
+              <%= link_to "About",about_path, class: "btn btn-outline-secondary mr-5" %>
+              <%= link_to "商品一覧",items_path, class: "btn btn-outline-secondary mr-5" %>
+              <%= link_to "新規登録",new_customer_registration_path, class: "btn btn-outline-secondary mr-5" %>
               <%= link_to "ログイン",new_customer_session_path, class: "btn btn-outline-secondary" %>
             <% end %>
           </ul>
