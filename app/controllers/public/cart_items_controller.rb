@@ -8,8 +8,8 @@ class Public::CartItemsController < ApplicationController
     @total = 0
   end
   def destroy_all
-  CartItem.destroy_all
-  redirect_to cart_items_path
+    CartItem.destroy_all
+    redirect_to cart_items_path
   end
 
   def create
@@ -18,6 +18,12 @@ class Public::CartItemsController < ApplicationController
     @cart_item.amount = params[:cart_item][:amount]
     @cart_item.item_id = params[:cart_item][:item_id]
     @cart_item.save
+    redirect_to cart_items_path
+  end
+
+  def destroy
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
     redirect_to cart_items_path
   end
 
