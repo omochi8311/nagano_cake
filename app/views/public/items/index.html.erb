@@ -1,13 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 offset-md-1">
-      <h4>商品一覧</h4>
-        <div class="items">
+      <span class="title">商品一覧</span>
+        <div class="item">
         <% @items.each do |item| %>
           <%= link_to item_path(item) do %>
+            <div class="items">
             <%= image_tag item.image, size: "200x200" %>
             <p><%= item.name %></p>
             <p>¥<%= item.price %></p>
+            </div>
           <% end %>
         <% end %>
         </div>

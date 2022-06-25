@@ -14,10 +14,21 @@
  *= require_self
  */
 
-.items {
+.title {
+  margin: 20px;
+  background-color: #e8e8e8;
+  font-size: x-large;
+}
+
+.item {
   display: flex;
   width: 500px;
   margin: 20px;
   padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
+.items {
+  margin: 30px;
+}
