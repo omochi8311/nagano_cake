@@ -5,9 +5,22 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    order = Order.new(order_params)
-    order.save
-    redirect_to orders_confirmation_path
+    @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
+    @order.shipping_cost = 800
+    if @order.save!
+      #子モデルを作る
+      #@orders = OrderDetail.all
+      current_customer.cart_items.each do |cart_item|
+      order_derail = OrderDerail.new
+      order_derail.order_id = @order.id
+      order_derail.item_id = cart_item.item.id
+      order_derail.price = cart_item.item.with_tax_price
+      order_derail.amount = cart_item.amount
+      order_derail.save
+      end
+    end
+    redirect_to orders_completion_path
   end
 
   def confirmation
@@ -40,12 +53,19 @@ class Public::OrdersController < ApplicationController
       end
   end
 
+
+
   def index
+    @orders = Order.all
+  end
+
+  def show
+
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:payment_method, :postal_code, :address, :name)
+    params.require(:order).permit(:payment_method, :postal_code, :address, :name, :status, :shipping_cost, :custome, :total_payment)
   end
 end

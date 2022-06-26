@@ -23,9 +23,20 @@
 .item {
   display: flex;
   width: 500px;
-  justify-content: center;
+  justify-content: center;s
+  align-items: center;
 }
 
 .items {
   margin: 30px;
+}
+
+.field {
+  margin: 20px;
+  text-align: center;
+}
+
+.actions {
+  margin: 10px;
+  text-align:center;
 }
