@@ -60,7 +60,13 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-
+    @order = Order.find(params[:id])
+    @order_details = @order.order_derails
+    @total = 0
+    #@order_details.each do |order_detail|
+      #@total += order_detail.subtotal
+    #end
+    #@total_payment = @total + @order.shipping_cost
   end
 
   private

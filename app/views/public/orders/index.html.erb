@@ -19,10 +19,13 @@
               <%= order.address %>
               <%= order.name %>
             </td>
-            <td><%#= order.cart_items.name %></td>
-            <td><%= order.total_payment %></td>
-            <td><%= order.status %></td>
-            <td><%= link_to "表示する",order_path([:id]),class: "btn btn-primary" %></td>
+            <td>
+              <% order.order_derails.each do |order_detail| %>
+                <%= order_detail.item.name %>
+              <% end %>
+            <td><%= order.total_payment %>円</td>
+            <td><%= order.status_i18n %></td>
+            <td><%= link_to "表示する",order_path(order),class: "btn btn-primary" %></td>
         </tr>
            <% end %>
       </table>

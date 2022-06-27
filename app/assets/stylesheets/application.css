@@ -33,10 +33,17 @@
 
 .field {
   margin: 20px;
-  text-align: center;
 }
 
 .actions {
   margin: 10px;
   text-align:center;
+}
+
+.mypage {
+  margin: 20px;
+}
+
+.mypage-edit {
+  width: 800px;
 }

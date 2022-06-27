@@ -10,7 +10,8 @@
           <h5>ジャンル</h5>
             <%= @item.genre.name %>
           <h5>税込価格(税抜価格)</h5>
-            <%= @item.price %>
+            <%= @item.with_tax_price %>
+           (<%= @item.price %>)円
           <h5>販売ステータス</h5>
             <% if @item.is_active %>
             <h5>販売中</h5>
