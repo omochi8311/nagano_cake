@@ -24,6 +24,13 @@ class Public::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+  def after_sign_in_path_for(resource)
+    customers_my_page_path # ログイン後に遷移するpathを設定
+  end
+
+  def after_admin_sign_out_path_for(resource)
+    root_path # ログアウト後に遷移するpathを設定
+  end
 
   protected
   # 退会しているかを判断するメソッド

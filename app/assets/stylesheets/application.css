@@ -20,15 +20,29 @@
   font-size: x-large;
 }
 
+.sub-title {
+  margin: 20px;
+  background-color: #e8e8e8;
+  font-size: large;
+}
+
+.form-group {
+  margin: 20px;
+}
+
 .item {
   display: flex;
-  width: 500px;
-  justify-content: center;s
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .items {
   margin: 30px;
+}
+
+.items-index {
+  text-align: right;
 }
 
 .field {
@@ -46,4 +60,12 @@
 
 .mypage-edit {
   width: 800px;
+}
+
+.total {
+  margin: 30px;
+}
+
+.text-box {
+  font-size: 25px;
 }

@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="row">
+  <div class="row my-3 h5">
+      <h4 class="title">配送先登録/一覧</h4>
+  </div>
     <div class="col-md-8 offset-md-1">
-      <h2>配送先登録/一覧</h2>
         <%= form_with model: @address,url:addresses_path do |f| %>
           <div class="field">
             <%= f.label :postal_code, "郵便番号（ハイフンなし）" %>
@@ -43,5 +44,4 @@
            </tbody>
           </table>
     </div>
-  </div>
 </div

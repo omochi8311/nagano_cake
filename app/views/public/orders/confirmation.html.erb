@@ -2,16 +2,15 @@
   <div class="row my-3">
     <h4 class="title">注文情報確認</h4>
   </div>
-  <div class="row">
+    <div class="row">
       <div class="col-lg-12 justify-content-center d-flex" style="height:200px;">
-            <table class="table table-hover table-inverse">
+            <table class="table table-bordered">
              <thead>
               <th>商品名</th>
               <th>単価(税込)</th>
               <th>数量</th>
               <th>小計</th>
             </thead>
-  　　</div>
             <tbody>
               <% @cart_items.each do |cart_item| %>
                 <tr>
@@ -23,18 +22,29 @@
               <% end %>
             </table>
             <table>
-                <th>送料</th>
-                <th>商品合計</th>
-                <th>請求金額</th>
+              <td colspan='3'></td>
+              <td colspan='3'></td>
+              <td colspan='3'></td>
+            </table>
+            <table class="text-center table table-bordered w-25">
               <tr>
+                <td>送料</td>
                 <td><%= @order.shipping_cost %></td>
+              </tr>
+              <tr>
+                <td>商品合計</td>
                 <td><%= @total %></td>
+              </tr>
+              <tr>
+                <td>請求金額</td>
                 <td><%= @order.shipping_cost + @total %></td>
               </tr>
             </table>
-            <strong>支払方法</strong>
-              <%= @order.payment_method %>
-            <strong>お届け先</strong>
+      </div>
+    </div>
+            <strong class="text-box">支払方法</strong>
+              <%= @order.payment_method_i18n %><br>
+            <strong class="text-box">お届け先</strong>
               〒<%= @order.postal_code %>
               <%= @order.address %>
               <%= @order.name %>
@@ -46,9 +56,10 @@
                 <%= f.hidden_field :name, :value => @order.name %>
                 <%= f.hidden_field :status, :value => @order.status %>
                 <%= f.hidden_field :total_payment, :value => @order.shipping_cost + @total %>
+              <div class="form-group row justify-content-center">
                 <%= f.submit "注文を確定する", class: "btn btn-success" %>
+              </div>
               <% end %>
             </tbody>
       </div>
-    </div>
 </div>

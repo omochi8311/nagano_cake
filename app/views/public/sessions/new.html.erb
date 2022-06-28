@@ -1,28 +1,33 @@
-<h2>ログイン</h2>
-  <h4>会員の方はこちらからログイン</h4>
+<div class="container">
+  <div class="row my-3 h3">
+    <h4 class="title">ログイン</h4>
+  </div>
+  <div class="row my-3 h6">
+    <div class="sub-title">会員の方はこちらからログイン
+    </div>
+  </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="form-group">
+    <%= f.label :email,"メールアドレス" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
+  <div class="form-group">
+    <%= f.label :password,"パスワード" %>
     <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
+ </div>
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="form-group">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="form-group">
     <%= f.submit "ログイン",class: "btn btn-primary" %>
   </div>
 <% end %>
 
-<h4>会員登録がお済みでない方</h4>
-<%= render "public/shared/links" %>
-<h4>から新規登録を行ってください</h4>
+<div class="row my-3 h6">
+  <div class="sub-title">会員登録がお済みでない方</div>
+</div>
+<%= render "public/shared/links" %>から新規登録を行ってください

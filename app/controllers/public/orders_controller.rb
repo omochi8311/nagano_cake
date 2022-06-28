@@ -19,6 +19,7 @@ class Public::OrdersController < ApplicationController
       order_derail.amount = cart_item.amount
       order_derail.save
       end
+    current_customer.cart_items.destroy_all
     end
     redirect_to orders_completion_path
   end
@@ -53,10 +54,8 @@ class Public::OrdersController < ApplicationController
       end
   end
 
-
-
   def index
-    @orders = Order.all
+    @orders = current_customer.orders
   end
 
   def show
